@@ -1,0 +1,226 @@
+body {
+    background-image: url(../img/kabe.jpeg);
+    text-align:center;
+}
+main{
+    background-image: url(../img/shiro2.jpg);
+    opacity: 0.9;
+}
+#name{
+    width: 50%;
+    max-height: 150px;
+    margin: 10px auto;
+    /*background-image: url(./img/bg.png);*/
+}
+nav{
+    background-image: url(../img/shiro.jpg);
+}
+#name > img{
+    display: block;
+    width:40%;
+    margin: 0px auto;
+}
+nav ul{
+    display: table;
+    margin: 0 auto;
+    padding: 0 ;
+    width: 80%;
+    text-align: center;
+}
+nav li{
+    display: table-cell;
+    min-width: 50px;
+}
+nav a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+    padding-bottom: 5px;
+}
+nav li.current0{
+    border-bottom: 8px solid #ffec1a;
+}
+nav li.current1{
+    border-bottom: 8px solid #1bffff;
+}
+nav li.current2{
+    border-bottom: 8px solid #ff21ff;
+}
+nav li.current3{
+    border-bottom: 8px solid #23ff27;
+}
+nav li.current4{
+    border-bottom: 8px solid #351aff;
+}
+nav li.current5{
+    border-bottom: 8px solid #ff2121;
+}
+nav li:hover{
+    color: #E7DA66;
+    border-bottom: 3px solid #f09c75;
+}
+a:hover{
+    color: #f00;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+/*HOME感想*/
+.kanso {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 5px double black;
+  }
+  
+  p{
+    text-align: center;
+  }
+  
+  ul{
+    text-align: center;
+  }
+  tbody{
+    text-align: center;
+  }
+
+
+/*フォント*/
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+#contents {
+  font-family: 'Itim', cursive;
+}
+
+/*おみくじ*/
+body{
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+#result{
+    margin: 30px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    line-height: 180px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    background: #f44336;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+#btn{
+    margin: 0px auto;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #00aaff;
+    box-shadow: 0 4px 0 #0088cc;
+    color: #fff;
+    cursor: pointer;
+}
+#btn:hover{
+    opacity: 0.8;
+}
+#btn.pushed{
+    margin-top: 32px;
+    box-shadow: 0 2px 0 #0088cc;
+}
+.spbtn{
+    display: inline-block;
+    width: 60px;
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: #fff;
+    box-shadow: 0 4px 0 #0088cc;
+    background: #00aaff;
+    cursor: pointer;
+}
+.spbtn.inactive{
+    opacity: 0.3;
+}
+
+
+/*電卓*/
+.btn-circle-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #87befd;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+.box15 {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background: #ffeaea;
+  box-shadow: 0px 0px 0px 10px #ffeaea;
+  border: dashed 2px #ffc3c3;
+  border-radius: 8px;
+}
+.box15 p {
+  margin: 0; 
+  padding: 0;
+}
+
+.yello{
+  background:#ffd700
+}
+
+/*ボタン　おみくじ*/
+#playBtn{
+    background:#F79428;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font: size 20px;;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    width: 300px;
+  }
+  #playBtn:hover{
+    background:#fff;
+    color:#F79428;
+  }
+  #playBtn:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #F79428;
+    transition:400ms ease all;
+  }
+  #playBtn:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  #playBtn:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
