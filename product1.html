@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/default.css">
+        <!--<link rel="stylesheet" href="./css/omikuji.css">-->
+        <title>おみくじ</title>
+    </head>
+    <body>
+        <main>
+            <div id="name">
+                <img src="./img/yyy_logo.png" alt="小里隼矢20901NHU">
+            </div>
+            <nav>
+            <ul>
+                <li class=current0 id="contents">
+                    <a href="index.html" >Home</a>
+                </li>
+                <li class=current1 id="contents">
+                    <a href="product1.html">Fortune</a>
+                </li>
+                <li class=current2 id="contents">
+                    <a href="product2.html">Canvas</a>
+                </li>
+                <li class=current3 id="contents">
+                    <a href="product3.html">Audio</a>
+                </li>
+                <li class=current4 id="contents">
+                    <a href="product4.html">Video</a>
+                </li>
+                <li class=current5 id="contents">
+                    <a href="product5.html">Original</a>
+                </li>
+            </ul>
+            </nav>
+                <h1><img src="img/datemikuji_logo.png" alt="伊達御籤" width="10%"></h1>              
+<h3>
+    <button id="playBtn">伊達御籤を引く！</button>
+</h3>
+<img src="img/sayumikuji4.jpg" id="omikuji" class="img_size" width="20%">
+</div>
+
+<script>
+     var omikujiImages = [
+        '../img/sayumikuji0.jpg',
+        '../img/sayumikuji1.jpg',
+        '../img/sayumikuji2.jpg',
+        '../img/sayumikuji3.jpg'
+     ];
+
+
+     document.getElementById('playBtn').onclick = function(){
+         omikuji_play();
+     }
+
+    function omikuji_play(){
+     
+     var number = Math.floor(Math.random() * omikujiImages.length);
+     var target = document.getElementById("omikuji");
+     target.src = "img/" + omikujiImages[number];
+    }
+
+</script>
+
+
+    <br>
+    <br>
+   
+    </body>
+</html>

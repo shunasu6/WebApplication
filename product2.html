@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/default.css">
+        <title>Canvas</title>
+    </head>
+    <body>
+        <main>
+            <div id="name">
+              <img src="./img/yyy_logo.png" alt="小里隼矢20901NHU">
+            </div>
+            <nav>
+            <ul>
+                <li class=current0 id="contents">
+                    <a href="index.html" >Home</a>
+                </li>
+                <li class=current1 id="contents">
+                    <a href="product1.html">Fortune</a>
+                </li>
+                <li class=current2 id="contents">
+                    <a href="product2.html">Canvas</a>
+                </li>
+                <li class=current3 id="contents">
+                    <a href="product3.html">Audio</a>
+                </li>
+                <li class=current4 id="contents">
+                    <a href="product4.html">Video</a>
+                </li>
+                <li class=current5 id="contents">
+                    <a href="product5.html">Original</a>
+                </li>
+            </ul>
+            </nav>
+            <section id="sec03">
+              <header>
+                <h1><img src="img/canvas_logo.png" alt="CANVAS" width="30%"></h1>
+                
+              </header>
+              <canvas id="mycanvas" width="400" height="400">  </canvas>
+              <script>
+                (function() {
+                  'use strict';
+                
+                  var canvas;
+                  var ctx;
+                  var Ball;
+                  var balls = [];
+                  var Stage;
+                  var stage;
+                
+                  canvas = document.getElementById('mycanvas');
+                  if (!canvas || !canvas.getContext) return false;
+                  ctx = canvas.getContext('2d');
+                  
+                  canvas = document.getElementById('mycanvas');
+                  if (!canvas || !canvas.getContext) return false;
+                  ctx = canvas.getContext('2d');
+                
+                  function rand(min, max) {
+                   
+                  return min + Math.floor(Math.random() * (max - min + 1));
+                  }
+                
+                  function adjustPosition(pos, r, max) {
+                  
+                  if (pos - r < 0) {
+                    return r;
+                  } else if (pos + r > max) {
+                    return max - r;
+                  } else {
+                    return pos;
+                  }
+                  }
+                
+                  canvas.addEventListener('click', function(e) {
+                  var x, y, r;
+                  var rect;
+                  
+                  rect = e.target.getBoundingClientRect();
+                  x = e.clientX - rect.left;
+                  y = e.clientY - rect.top;
+                  r = rand(0, 100) < 20 ? rand(50, 80) : rand(10, 35);
+                
+                  x = adjustPosition(x, r, canvas.width);
+                  y = adjustPosition(y, r, canvas.height);
+                  balls.push(new Ball(x, y, r));
+                  });
+                
+                  Ball = function(x, y, r) {
+                  this.x = x;
+                  this.y = y;
+                  this.r = r;
+                  this.vx = rand(-10, 10);
+                  this.vy = rand(-10, 10);
+                  this.color = 'hsla(' + rand(30, 90) + ', ' + rand(30, 70) + '%, ' + rand(50, 60) + '%, ' + Math.random() + ')';
+                  };
+                
+                  Ball.prototype.draw = function() {
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+                  ctx.fillStyle = this.color;
+                  ctx.closePath();
+                  ctx.fill();
+                  };
+                
+                  Ball.prototype.move = function() {
+                  if (this.x + this.r > canvas.width || this.x - this.r < 0) {
+                    this.vx *= -1;
+                  }
+                  if (this.y + this.r > canvas.height || this.y - this.r < 0) {
+                    this.vy *= -1;
+                  }
+                  this.x += this.vx;
+                  this.y += this.vy;
+                  };
+                
+                  // var ball = new Ball(rand(100, 200), rand(100, 200), rand(10, 50));
+                  // ball.draw();
+                
+                  Stage = function() {
+                  this.update = function() {
+                    var i;
+                    this.clear();
+                    for (i = 0; i < balls.length; i++) {
+                    balls[i].draw();
+                    balls[i].move();
+                    }
+                    setTimeout(function() {
+                    this.update(); // Stage.update()
+                    }.bind(this), 30);
+                  };
+                  this.clear = function() {
+                    ctx.fillStyle = '#FFE4E1';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    //画像
+                    /*const chara = new Image();
+                    chara.src="img/DateSayuriCanvas.jpg";
+                    chara.onload = ()=>{
+                    ctx.drawImage(chara, 0, 0, 472, 554);  // ★ここを変更★
+                    };*/
+                  }
+                  };
+                
+                  stage = new Stage();
+                  stage.update();
+                
+                })();
+                </script>
+            </section>
+            
+      
+          </div>
+        </div>
+        
+    
+    </body>
+</html>

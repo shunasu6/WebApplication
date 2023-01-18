@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/default.css">
+        <title>オリジナル</title>
+    </head>
+    <body>
+        <main>
+            <div id="name">
+                <img src="./img/yyy_logo.png" alt="小里隼矢20901NHU">
+            </div>
+            <nav>
+            <ul>
+                <li class=current0 id="contents">
+                    <a href="index.html" >Home</a>
+                </li>
+                <li class=current1 id="contents">
+                    <a href="product1.html">Fortune</a>
+                </li>
+                <li class=current2 id="contents">
+                    <a href="product2.html">Canvas</a>
+                </li>
+                <li class=current3 id="contents">
+                    <a href="product3.html">Audio</a>
+                </li>
+                <li class=current4 id="contents">
+                    <a href="product4.html">Video</a>
+                </li>
+                <li class=current5 id="contents">
+                    <a href="product5.html">Original</a>
+                </li>
+            </ul>
+            </nav>
+                <h1><img src="img/dentaku.png" alt="電卓" width="10%"></h1>
+              
+                <style>
+                    button
+                    {
+                        width: 50px;
+                        height: 50px;
+                    }
+                </style>
+                
+                    <input style="font-size: 28px; text-align: right;" /><br>
+                    <script>
+                    function update( _v ) 
+                    {
+                        document.querySelector( 'input' ).value = _v
+                    }
+                
+                    function append( _v ) 
+                    {
+                        document.querySelector( 'input' ).value += _v
+                    }
+                
+                    function calc() 
+                    {
+                        const v = document.querySelector( 'input' ).value
+                        try {
+                            const f = new Function( 'return ' + v )
+                            update( f().toString() )
+                        } catch( _error ) {
+                            update( _error ) 
+                        }
+                    }
+                    </script>
+                    <button onclick="append( '1' )" >1</button>
+                    <button onclick="append( '2' )" >2</button>
+                    <button onclick="append( '3' )" >3</button>
+                    <button onclick="append( '4' )" >4</button>
+                    <button onclick="append( '5' )" >5</button><br />
+                    <button onclick="append( '6' )" >6</button>
+                    <button onclick="append( '7' )" >7</button>
+                    <button onclick="append( '8' )" >8</button>
+                    <button onclick="append( '9' )" >9</button>
+                    <button onclick="append( '0' )" >0</button><br />
+                    <button onclick="append( '.' )" >.</button>
+                    <button onclick="append( '+' )" >+</button>
+                    <button onclick="append( '-' )" >-</button>
+                    <button onclick="append( '*' )" >*</button>
+                    <button onclick="append( '/' )" >/</button><br />
+                    <button onclick="append( '**' )" >^</button>
+                    <button onclick="append( '**0.5' )" >√</button>
+                
+                    <button onclick="calc()" style="width:105px;">=</button>
+                
+                    <button onclick="update( '' ) " >CLR</button>
+                
+                <br>
+                <br>
+                <br>
+                <!--スライドショー-->
+                <h1><img src="img/date_super.gif" alt="伊達さゆり" width="30%"></h1>
+        
+                <div class="slide">
+                    <img src="img/Date/Date1.jpg" />
+                    <img src="img/Date/Date2.jpg" />
+                    <img src="img/Date/Date3.jpg" />
+                    <img src="img/Date/Date4.jpg" />
+                    <img src="img/Date/Date5.jpg" />
+                    <img src="img/Date/Date6.jpg" />
+                    <img src="img/Date/Date7.jpg" />
+                    <img src="img/Date/Date8.jpg" />
+                    <img src="img/Date/Date9.jpg" />
+                    <img src="img/Date/Date10.jpg" />
+                    <img src="img/Date/Date11.jpg" />
+                    <img src="img/Date/Date12.jpg" />
+                    <img src="img/Date/Date13.jpg" />
+                    <img src="img/Date/Date14.jpg" />
+                </div>
+                
+                    <p>左にバーを移動させるとスライド速度が早くなるよ<input type="range" id="slide_speed" value="2000" min="100" max="10000"></p>
+                
+
+                <style>
+                    .slide {
+                        position:relative;
+                        height:300px;
+                    }
+                    .slide img {
+                        position: absolute;
+                        opacity:0;
+                        transition:all 1.2s ease-in-out;
+                        height:100%;
+                        object-fit:contain;
+                    }
+                    </style>
+        
+        <script>
+            window.addEventListener('load', function () {
+                viewSlide('.slide img');
+            });
+            function viewSlide(className, slideNo = -1)
+            {
+                let imgArray = document.querySelectorAll(className);
+                if (slideNo >= 0) {
+                    //初回以外は現在のスライドを消す
+                    imgArray[slideNo].style.opacity = 0;
+                }
+                slideNo++;
+                if (slideNo >= imgArray.length) {
+                    slideNo = 0; //次のスライドがなければ最初のスライドへ戻る
+                }
+                imgArray[slideNo].style.opacity = 1;
+                let msec = document.getElementById('slide_speed').value;
+                setTimeout(function(){viewSlide(className, slideNo);}, msec);
+            }
+            </script>
+    <br>
+    <br>
+    <br>
+    <!-- スライドショーパターン2　一応残した
+            <div id="photo">
+                    <img src="img/Date/Date1.jpg" />
+                    <img src="img/Date/Date2.jpg" />
+                    <img src="img/Date/Date3.jpg" />
+                    <img src="img/Date/Date4.jpg" />
+                    <img src="img/Date/Date5.jpg" />
+                    <img src="img/Date/Date6.jpg" />
+                    <img src="img/Date/Date7.jpg" />
+                    <img src="img/Date/Date8.jpg" />
+                    <img src="img/Date/Date9.jpg" />
+                    <img src="img/Date/Date10.jpg" />
+                    <img src="img/Date/Date11.jpg" />
+                    <img src="img/Date/Date12.jpg" />
+                    <img src="img/Date/Date13.jpg" />
+                    <img src="img/Date/Date14.jpg" />
+                </div>
+                <style type="text/css">
+                    #photo {
+                        width: 100%;
+                        height: 100%;
+                        margin: 0 auto;
+                        text-align: left;
+                        overflow: hidden;
+                        position: relative;
+                    }
+                    
+                    #photo img {
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                    }
+                    </style>
+                    
+                    
+                    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+                    <script type="text/javascript">
+                    $(function(){
+                        var setImg = '#photo';
+                        var fadeSpeed = 1600;
+                        var switchDelay = 5000;
+                    
+                        $(setImg).children('img').css({opacity:'0'});
+                        $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+                    
+                        setInterval(function(){
+                            $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+                        },switchDelay);
+                    });
+                    </script>
+                    -->   
+
+    </body>
+</html>
