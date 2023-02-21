@@ -224,3 +224,25 @@ body{
     transition:800ms ease all;
   }
 
+/*Canvasスクラッチ*/
+body { margin: 0; }
+
+#bridge {
+  display: block;
+  margin: 0 auto;
+  background-image: url(../img/date_suzume.jpg);
+  background-image: url(../img/suzume.jpg) 1x, url(img/suzume.jpg) 2x );
+  background-size: cover;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  cursor: crosshair;
+  cursor: url(img/date_suzume.jpg) 53 53, crosshair;
+}
+#bridgeContainer { 
+  text-align: center;
+  font-family: Avenir, sans-serif;
+}
+#bridgeContainer figcaption { 
+  margin-top: 2rem; 
+}
